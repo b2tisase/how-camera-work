@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> How Camera Works </title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+  <!-- ከላይ ያለው ሄዲንጉ ጥቁር ወይም ነጭ እንዲሆን ከተፈለገ ፤ ከዚህ በታች ያለውን ኮድ on/off በማድረግ መጠቀም ይቻላል -->
+
+  
+  <div class="w3-blue"> 
+
+
+  <!-- ከላይ ያለው ሄዲንጉ ጥቁር ወይም ነጭ እንዲሆን ከተፈለገ ፤ ከዚህ በላይ ያለውን ኮድ on/off በማድረግ መጠቀም ይቻላል -->
+
+
+
+<!-- Text DISABLE start HERE-->
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disable cut copy paste</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+  
+  
+<p class="code"><br>
+
+  <script type="text/javascript">
+  
+    $(document).ready(function() {
+      $('body').bind('cut copy paste', function (e) {
+        e.preventDefault();
+      })
+      $(".code").on("contextmenu", function(e) {
+        return false;
+      })
+    })
+    
+    </script>
+
+
+</body>
+</html>
+
+
+<!-- Text DISABLE end HERE-->
+
+
+
+
+
+
+<!-- Side Navigation -->
+
+<!--  <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-text-theme">Bitew Studio Lab</h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+  <a href=" https://www.bitews.com/resource/camera-movement" class="w3-bar-item w3-button">Camera Movement</a>
+  <a href="https://www.bitews.com/resource/how-camera-works" class="w3-bar-item w3-button">How Camera Works</a>
+  <a href="https://www.bitews.com/resource/the-interview" class="w3-bar-item w3-button">The Interview</a>
+  <a href=" https://www.bitews.com/resource/audio" class="w3-bar-item w3-button">Audio</a>
+</nav> -->
+
+<!-- Header ይህ ክፍል ከመጀመሪያ ላይ የሚገኘው ሄደር ነው። ከለሩን ከታች በማስገባት መቀየር ይቻላል -->
+
+
+
+<header class="w3-container  w3-padding" id="myHeader">
+
+<!--  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> -->
+
+<div class="w3-row-padding w3-center w3-margin-top ">
+
+  <h1 class="w3-jumbo" class="code"> <b> How Camera Works      <br> </b> </h1>
+  
+   <!--  <h1 style="text-align:center;" class="code" > Understanding How camera captures images: Parts of the Camera:
+      Still or DSLR Camera </h1> <br>-->
+  
+      <button class="w3-btn w3-xlarge w3-pink w3-hover-grey"
+       onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">About Bitew Studio Lab</button>
+    </div>
+  </div>
+</header>
+
+<!-- Modal ይህ ክፍል About Bitew Studio Lab ክሊክ ሲደረግ ሌላ የሚከፈት ዊንዶ መጠቀሚያ ኮድ እዚህ ይጀምራል-->
+
+<div id="id01" class="w3-modal ">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-yellow"> 
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright">×</span>
+        <h4 class="code" style="text-align:center;" >What We Do/service... <br> </h4>
+        <h5 class="code" style="text-align:center;" >Here’s what we can do for you. <i class="fa fa-smile-o"></i>  <br> </h5>
+      </header>
+      <div class="w3-padding w3-blue">
+        <p class="code" > We like to think of ourselves as your creative partner. You bring your passion and intent; we provide our expertise and love of design. <br> </p>
+
+
+        <p>Go to our <a class="w3-btn w3-red " href="#">BSL WEBSITE</a> to learn more!</p>
+
+      </div>
+      <footer class="w3-container w3-white">
+        <p style="text-align:center;">BITEW STUDIO LAB</p>
+      </footer>
+    </div>
+</div>
+
+<!-- Modal ይህ ከዚህ በላይ ያለው ክፍል About Bitew Studio Lab ክሊክ ሲደረግ ሌላ የሚከፈት ዊንዶ መጠቀሚያ ኮድ  ሲሆን ከዚህ በላይ ያልቃል -->
+
+
+
+        <!-- ይህ ከዚህ በታች ያለው ኮድ በቀይ ታብ የተቀመጠው "download application" ሲሆን ክሊክ ሲደረግ ሌላ ዊንዶ የሚመጣው ከዚህ በታች ይጀምራል -->
+
+        <div class="w3-center w3-padding-32  "> 
+
+        
+       <!--  <button class="w3-button  w3-red  w3-padding-large w3-section w3-hide-small" onclick="document.getElementById('download').style.display='block'">
+          <i class="fa fa-download"></i> Download Application </button>
+  
+        <h5>Available for <i class="fa fa-android w3-xlarge w3-text-green  "></i> <i class="fa fa-apple w3-xlarge"></i> <i class="fa fa-windows w3-xlarge w3-text-red"></i></h5>
+  
+      </div>
+      <div class="w3-col l4 m6">
+       
+        <div class="w3-center w3-hide-large w3-hide-medium">
+
+          <button class="w3-button  w3-block w3-padding-large" onclick="document.getElementById('download').style.display='block'">
+            <i class="fa fa-download "></i> Download Application -->
+
+            
+          </button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+ <!-- <div id="download" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content" style="padding:32px">
+      <div class="w3-container w3-white">
+        <i onclick="document.getElementById('download').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+        <h2 class="w3-wide">DOWNLOAD</h2>
+        <p>Download the app in AppStore, Google Play or Microsoft Store.</p>
+        <i class="fa fa-android w3-large w3-text-green"></i> <i class="fa fa-apple w3-large w3-text-orange"></i> <i class="fa fa-windows w3-large w3-text-blue"></i>
+        <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+        <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" 
+        onclick="document.getElementById('download').style.display='none'"> Download</button>
+      </div>
+    </div>
+  </div> -->
+  
+  
+   <!-- ይህ ከዚህ በላይ ያለው ኮድ በቀይ ታብ የተቀመጠው "download application" ሲሆን ክሊክ ሲደረግ ሌላ ዊንዶ የሚመጣው ከዚህ በላይ ያልቃል -->
+
+   
+
+
+   <div class="w3-row-padding w3-center w3-margin-top ">
+
+    <h1 style="text-align:center;" class="code" > Understanding How camera captures images: Parts of the Camera:
+      Still or DSLR Camera </h1> <br>  
+
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSlTGXA9MW-PE85DtodbPzZRp2SpF8btnADxYEtsQDyWqzTG7J1ziJM7j1DieF6I-cyUuqWKurk3ELMmopcF8lCn0f299L-agC6P8SHI1Dqw9gxH8pzb5FcbV7TfrZ7lQRkMRFIhdcMbpl8vj3mwfMgpDyuSfl4TYGSk_G0aNrTj5BFgXVRx8YyDLbVY4/s1270/16.png " alt="Sandwich" style="width:100%">
+
+
+
+
+
+   <!--  <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSlTGXA9MW-PE85DtodbPzZRp2SpF8btnADxYEtsQDyWqzTG7J1ziJM7j1DieF6I-cyUuqWKurk3ELMmopcF8lCn0f299L-agC6P8SHI1Dqw9gxH8pzb5FcbV7TfrZ7lQRkMRFIhdcMbpl8vj3mwfMgpDyuSfl4TYGSk_G0aNrTj5BFgXVRx8YyDLbVY4/s1270/16.png " 
+    alt="App" width="335" height="197"> -->
+
+   
+    
+         <!-- <h2 style="text-align:center;"> Camera Movement   </h2><br> -->
+    
+    
+    <div class="w3-half w3-padding-16 ">
+      <div class=" w3-container w3-row w3-border w3-brown " style="min-height:460px ">
+      <h1 class="code" >   Lens  </h1> <br>
+    
+      <!-- አይከን ወይም ፎቶ ኦን እና ኦፍ አድርጎ ለመጠቀም ኮዱ እዚህ ይጀምራል -->
+    
+     <!--  <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i> -->
+    
+      <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjalRj8mdV8r5U35aVzZcSI1zHdImPb5or1mGUvLVi7SAf6Jz59GPDKS1iQaMSuXjM99diwDph0r2oGw3MnI1x8OlZxRGfZHmMMlv5xypMlcEQAYNdy789X-eTrEgXgezd61gc3k8QpGh30U9BM4F_mfWAQRdoYEvPBpo0WvJe4-fRTwX5P_UhbZ2C9yDw/s1506/1.png" 
+          alt="App" width="335" height="197">
+    
+      <!--  <img src=" #" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone"> -->
+      
+      
+     <!-- አይከን ወይም ፎቶ ኦን እና ኦፍ አድርጎ ለመጠቀም ኮዱ ከዚህ በላይ ያልቃል -->
+    
+      <p class="code" style= "text-align:left;"  > 
+        
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Aperture / F-Stop / Iris <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focal length (Wide / Telephoto / Zoom) <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focus <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Filter (Neutral Density) These are placed in front of lens. Pro Video cameras have them built-in. <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Shutter <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Shutter speed <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Image Sensor (Film) <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Sensitivity / Gain / ISO <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  White Balance <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Viewfinder/Display <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Film movie cameras and DSLRs have optical viewfinders <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Digital cameras, Video, DSLR, Mirrorless etc. have display screens and some have digital viewfinders. <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focus <br> </li>
+
+
+
+
+       <br> </p>
+    
+             
+    
+            <!--  <p><a href=" https://www.bitews.com/shop" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p> -->
+     
+      </div>
+    </div>
+    
+    <div class="w3-half w3-padding-16">
+      <div class="w3-card w3-container w3-border w3-green" style="min-height:460px">
+      <h1> Focal Length </h1><br>
+    
+     <!--  <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i> -->
+    
+      <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir2HO1Q5fwacba1QIZHX-8ESmCvg8YTzMyoqjQH7zv0aRSaxy00tH5v9MYL6WfJdkvF_yfSiW_5jPsUCflB9QD8MitEueeHIof0-TzTevEeJO5xK6FxXpm9yCNDa0O0VmSFQ9n61dcVqqMiB0Xh27fxkU9ZU78MQMUUaHBChfvdUaK6Xjyht7DnPGWmSg/s1814/2.png" 
+          alt="App" width="335" height="197">
+    
+     <!--  <img src="#" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone"> -->
+    
+     
+      
+      <p class="code" style= "text-align:left;" >  
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Lenses come in various focal lengths. From Ultra Wide Angle (fish-eye) to Super Telephoto (think telescope) <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Regardless of focal length, there are 2 types. <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Zoom: where the focal length can change <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Prime: fixed focal length <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focal length is described in millimetres.  The smaller the number, the wider the angle. 
+          The larger the mm (say 200mm) the more narrow the angle of view: telephoto.<br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focal length plays as strong a roll in creating visual media as lighting does.  Maybe more so. 
+          If you want to shoot a person in a Medium Shot (From stomach up) you could set up the camera
+           very close with a wide lens, or set up 20 feet away and use a telephoto lens. 
+          While the size of the subject in the frame remains the same, everything else changes.
+           Particularly the subjects relation to the background...or their environment. <br> </li>
+
+
+ <br> </p>
+    
+           
+      
+      </div>
+    </div>
+    
+    
+    <!-- xx -->
+    
+    
+    <div class="w3-row-padding w3-center w3-margin-top ">
+    
+      <h3 style="text-align:center;">   </h3><br>
+    
+    
+    <div class="w3-half w3-padding-16 ">
+    
+      <div class=" w3-card w3-container w3-border w3-indigo " style="min-height:460px">
+    
+      <h1 class="code" >  Light  </h1><br>
+    
+     <!--  <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i> -->
+    
+    <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwhmfyGzS5w7PH2pbAkOB2vseDaA-Km8YJNichH5WWvtNauJVlu-TK9YlTeRmz096XXH7uzOOAuqi5XLnTaTABpGF_lvb2eqZiE7hN2HpJAP_BGbGQnszS0W0n_cgYvreaT6ZlR9Gg0yyHNKdrtOFkArZwWMvNQYVurbi3a7_fuwgDjM41k5YFCBJoyEg/s1344/3.png" 
+          alt="App" width="335" height="197">
+      
+     
+    
+      <p class="code" style= "text-align:left;"  > 
+
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>   Of course, the most obvious thing to change exposure is add or remove light. Either natural light (direct sunlight,
+          or shoot in shade, under cloudy sky, etc.) or using lighting instruments. Bigger Brighter lights, or dim the lights. <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Aperture <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  This is a physical part of a lens, and controls the amount of light coming through 
+          much the way a water faucet handle controls the amount of water coming through a faucet. <br> </li>
+
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Small Aperture: Less light, more depth of field <br> </li>
+
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Large aperture: More light comes in, but shallow depth of field. <br> </li>
+
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li> It is referred to by many names <br> </li>
+
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li> Iris<br> </li>
+
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  f/stop: The  f-stop is the actual number used to define the opening. Smaller number:Wider open <br> </li>
+
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  Maximum (maximum open, or smallest number) is dependent on the physical design of the lens.  <br> </li>
+
+
+<br> </p>
+    
+            
+     
+      </div>
+    </div>
+    
+    <div class="w3-half w3-padding-16 ">
+      <div class="w3-card w3-container w3-border w3-purple" style="min-height:460px">
+      <h1 class="code" > Gain / ISO  </h1><br>
+    
+     <!--  <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i> -->
+    
+      <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaJQcD-kYjfYaNOropT9Ou1x1X_ht9JL8SKRGjcaZg-z3rx0sTN7XDt7MXL8t1ybyCWOCXEGDxEhoa-rXabA0uFEQWwu8wkvdPRTwEPK1O3ZIwmfwl4zY2-STl1oTwcxRJ5m_r9wlBHQWYj9LLg5bM4mGNWwbN_UPLw8bBmKPK_1jjDSzUw-n8jhKLd80/s1384/4.png" 
+          alt="App" width="335" height="197">
+
+
+
+      <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM7guFbzRHAa9F5GGm5PfOdrYaU2Ko-umkT_PLhyT3yxzlIfFdKtGlEfGr77jgjLmDiB670x0UnyEUvQcuBqo2ebp36Y1968jO8nXD9rVdUmXw9FxEhDO7tQq9I94zpqd7S2dV-OFaGCHzdgp9L6ni7S9ddjMndvCz_mH_l7wKmhlKqmBKzP_cQ8lPdAc/s1430/5.png" 
+      alt="App" width="335" height="197">
+
+    
+      <p class="code" style= "text-align:left;"  > 
+        
+        <li   li class="code" style= "text-align:left;" ul class="a" li> Video Cameras use GAIN, measured starting at 0 dB, moving up in increments 
+          of 3 to double sensitivity. (+3dB, +6dB, =9dB, etc.)<br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li> DSLR and Mirrorless cameras use ISO. The base here is usually ISO 100. <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li> This is the sensitivity of the image sensor to collecting light. (Or the speed of film in a film camera) <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>The more gain, or the higher the Gain or ISO, the more sensitive to light the sensor becomes, allowing you to shoot with less light. 
+          TRADE-OFF: the noisier the image becomes. (Or more grainy with film) <br> </li>
+
+        <li   li class="code" style= "text-align:left;" ul class="a" li>  The lower the Gain or ISO, the more defined and clean the image. TRADE-OFF: less light sensitive, requiring more light for proper exposure.<br> </li>
+
+ <br> </p>
+    
+           
+      
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    <!-- ሁለት ኮለመን ያለው ኮድ እዚህ ይጀምራል-->
+    
+    
+    
+    <div class=" w3-container w3-padding-64 white ">
+    
+     <img src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzNUSsk36fQWL55bBDeZTDkh_iM4JInOdkEwQvodvXHRieQct2B0-HKCP_SocO-UrCTonCDPRM_5hMnK7vTqSCtbuEuOnwQfPr6fBqqwATsHDeh6wSbFfXGW1YkrqxWiQqJKBZqiyIOmvpeoEtVrasFVZjf19dneP5m_PXHFwYN5y75e_Ac_mQkGy6Ecc/s1450/6.png"
+      style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt=" # "> 
+
+
+      <img src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVUnbnnwNGH75U-kA_GlrYH5l74GFYA5tIET2RRZPpq0IdVbpPN_TfiLQk4M4qqrLU_iI4GqwwOSPqw4nG7oD92X1PM9e42U6sxivIGHpWD-Rdr9ODNB2CAWhGtDmfnRVvxJi8kogNRX6TSnMcydrlEvDK_UdIci3HvY48Ug5OPxqgtt-x_U3Vrw1IBms/s1456/7.png"
+      style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt=" # "> 
+    
+      <div class="w3-center" >
+        <h2 class="code" > Other Factors  <br> </h2>
+      
+    <!-- <h3 class="code" > PEDESTAL <br> </h3> -->
+    
+    <p class="code" style= "text-align:left;"  > 
+      
+      
+      <li   li class="code" style= "text-align:left;" ul class="a" li> Neutral Density <br> </li>
+
+
+      <li   li class="code" style= "text-align:left;" ul class="a" li> Shutter Speed <br> </li>
+
+
+
+      <li   li class="code" style= "text-align:left;" ul class="a" li> The longer time the sensor is exposed to light, the more light it can collect. This happens in a very short amount of time. 
+        If you are shooting at 30 fps (Frames Per Second) each frame can only be exposed for 1/30 of a second or less.  <br> </li>
+
+
+ <br> </p>
+    
+
+      </div>
+  
+       
+      </div>
+      </div>
+    </div>
+    
+
+
+  
+  <!--  <h2 style="text-align:center"> Have Questions?</h2>
+  
+  
+  
+   <p style="text-align:center;" class="code"  > Feel free to message us! we are here to discuss your ideas and bring them to life.<br>
+
+    Feel free to adjust the description based on your specific style and approach to design.  <br> </p> -->
+
+    
+
+    <!-- Contact Section -->
+
+
+   
+
+
+    <div class=" w3-padding-16 ">
+
+      <!--   w3-padding-64  -->
+
+
+<div class="  w3-light-grey  " >
+
+
+<!--  w3-container -->
+ 
+
+<h3 style="text-align: center"> The End </h3>
+
+<!-- <p style="text-align: center">Lets get in touch. Send us a message to Palo Alto, CA:</p> -->
+
+<div style="margin-top:10px">
+
+
+ <!--  <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +1(201) 374-0818</p>
+    <p> <i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right" > </i> Email: BSL@bitews.com</p> 
+
+    <div class="w3-center" >
+
+    <p> <i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i>  <a href=" # " target="_blank" class="w3-hover-text-green" > +1(650) 229-8641 </a></p>
+
+   <!--  <p> <i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i> Email: <a href=" # " target="_blank" class="w3-hover-text-green" > BSL@bitews.com</a></p> -->
+    
+    <div class="w3-center w3-padding-8  "> 
+  
+<!-- 
+  <p><a href=" https://forms.gle/MKPz9uc1tg59f51s5" class="w3-button w3-black"><i class="fa fa-envelope"> </i> SEND MESSAGE</a></p> -->
+
+  
+  
+ 
+  <div class=" w3-padding-16"> 
+
+
+
+ <!--footer start here-->
+
+
+ 
+
+  <footer class="w3-padding-32 w3-theme-d1 w3-center"> 
+  
+    <a href="#myHeader" class="w3-button w3-blue"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+
+
+
+
+<!--     
+  <h4>Follow Us</h4>
+
+  
+  
+  <a class="w3-button w3-large w3-teal" href=" https://www.facebook.com/profile.php?id=100086062394930" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-teal" href=" https://twitter.com/Bitewstudio" title="Twitter"><i class="fa fa-twitter"></i></a>
+  
+  <a class="w3-button w3-large w3-teal" href=" https://www.instagram.com/bitewstudio/" title="instagram"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href=" https://www.linkedin.com/company/bitew-studio-lab/?viewAsMember=true" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+
+
+
+    
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="#" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+
+
+  <p class="code" >IMPORTANT: <br> </p>
+
+    <p class="code"> We don't provide a copyright or trademark logo and we don't take responsibility for copyright or trademark-related issues.  <br> </p>
+
+      <p class="code">  We cannot accept work involving adult content, gambling, alcohol and pornography.  <br> </p>
+  
+
+    <p> Remember to check out our  <a href=" https://www.bitews.com/ " target="_blank" class="w3-hover-text-green"> Bitews.com</a></p>
+
+
+  
+
+    <a href=" https://www.bitews.com/policy/terms-of-service" target="_blank" class="w3-hover-text-green"> Terms & Conditions |</a>
+
+
+    <a href=" https://www.bitews.com/policy/privacy-policy" target="_blank" class="w3-hover-text-green">Privacy Policy  |</a>
+    
+    <a href=" https://www.bitews.com/policy/cookie-policy" target="_blank" class="w3-hover-text-green">Cookie Policy  |</a>
+    
+    <a href=" https://www.bitews.com/policy/acceptable-use-policy" target="_blank" class="w3-hover-text-green"> Acceptable Use Policy  |</a>
+
+    <a href=" https://www.bitews.com/policy/rp " target="_blank" class="w3-hover-text-green "> Refund Policy  |</a>
+
+   
+    <a href=" https://www.bitews.com/disclaimer " target="_blank" class="w3-hover-text-green "> Disclaimer </a> 
+
+    <p style="text-align:center;"> © Copyright 2024,  Bitew Studio Lab (BSL) and logo.  All right reserved.</p>
+
+
+
+ <footer class="w3-container w3-theme-dark w3-padding-16">
+  
+ 
+
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>   
+
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+  
+  <div class="w3-right"> 
+
+    <p>Powered by <a href=" https://www.bitews.com/" title="BSL.LOGO" target="_blank"
+      class="w3-hover-text-green">BSL</a></p>
+
+      
+    -->
+
+</footer> 
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "100%";
+  x.style.fontSize = "40px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Tabs
+function openCity(evt, cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-dark-grey";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+// Accordions
+function myAccFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Slideshows
+var slideIndex = 1;
+
+function plusDivs(n) {
+  slideIndex = slideIndex + n;
+  showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+showDivs(1);
+
+// Progress Bars
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+
+
+
+ <!-- ይህ ከዚህ በታች የሚጀምረው ኮድ በጣም አስፈላጊ ኮድ ነው። የኪቦርድ ኪ ወይም ማውሳችንን በቀኝ ክሊክ ሲደረፍ ለሚከፈተው
+     እና የሚታዬውን ወይም ኮፒ ፔስት የሚደረገውን ኮድ ወይም ቴክስቱን ኮፒ እንዳይሆን መከላከያ ኮድ ነው። እቦዲውጋ ካለው ትንሽዬ ኮድን ጨምሮ -->
+
+     <script>
+
+
+      document.onkeydown = function(e){
+      
+          //console.log(e.keyCode); // u = 85, i = 73, j =74
+          if (e.ctrlkey && e.keyCode == 85){
+      
+              alert("Ctrl + u has been disabled");
+      
+              return false;
+          }
+      
+          if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+      
+              alert("Ctrl + shift + I has been disabled");
+      
+              return false;
+          }
+      
+      
+          if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+      
+              alert("Ctrl + shift + J has been disabled");
+      
+            return false;
+      }
+          if (e.keyCode == 123) { // F12 button
+      
+              alert("F12 has been disabled");
+      
+              return false;
+          }
+      
+      
+      }
+      
+              
+</script>
+      
+<!-- ይህ ከዚህ በላይ ያለው ኮድ በጣም አስፈላጊ ኮድ ነው። የኪቦርድ ኪ ወይም ማውሳችንን በቀኝ ክሊክ ሲደረፍ ለሚከፈተው
+   እና የሚታዬውን ወይም ኮፒ ፔስት የሚደረገውን ኮድ ወይም ቴክስቱን ኮፒ እንዳይሆን መከላከያ ኮድ ነው። እቦዲውጋ ካለው ትንሽዬ ኮድን ጨምሮ -->
+
+</body>
+</html>
+
+
+
+
+
