@@ -1,704 +1,776 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title> How Camera Works </title>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-</head>
-<body>
-
-
-  <!-- ከላይ ያለው ሄዲንጉ ጥቁር ወይም ነጭ እንዲሆን ከተፈለገ ፤ ከዚህ በታች ያለውን ኮድ on/off በማድረግ መጠቀም ይቻላል -->
-
-  
-  <div class="w3-blue"> 
-
-
-  <!-- ከላይ ያለው ሄዲንጉ ጥቁር ወይም ነጭ እንዲሆን ከተፈለገ ፤ ከዚህ በላይ ያለውን ኮድ on/off በማድረግ መጠቀም ይቻላል -->
-
-
-
-<!-- Text DISABLE start HERE-->
-
-<!DOCTYPE html>
-<html>
-
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Disable cut copy paste</title>
+  <title>How Camera Works | Bitew Studio Lab</title>
+
+  <!-- External Stylesheets & Fonts -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --primary-dark: #0b5ed7;
+      --accent: #e11d48;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --text-main: #1f2937;
+      --text-muted: #6b7280;
+      --bg-page: #f8fafc;
+      --link-blue: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-main);
+      background-color: var(--bg-page);
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Sticky Navigation Bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .top-nav .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+    }
+
+    .brand-tag {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: #334155;
+      text-decoration: none;
+      padding: 7px 11px;
+      border-radius: 6px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      background: #f1f5f9;
+      color: var(--primary-color);
+    }
+
+    /* Hero Banner Header */
+    .hero-banner-container {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 68px 20px 58px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .hero-banner-container h1 {
+      font-size: 3.1rem;
+      font-weight: 800;
+      margin: 0 0 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-banner-container p {
+      max-width: 780px;
+      margin: 0 auto 24px;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* Page Container */
+    .main-wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 36px 20px 80px;
+    }
+
+    /* Content Section Cards */
+    .edu-section {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 36px 32px;
+      margin-bottom: 36px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    }
+
+    .section-header {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sub-header {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    .sub-sub-header {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    /* Responsive Card Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 24px 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin: 24px 0;
+    }
+
+    /* Content Cards */
+    .content-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .content-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+    }
+
+    .card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 12px;
+    }
+
+    .card-media {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      cursor: zoom-in;
+      transition: opacity 0.2s ease;
+    }
+
+    .card-media:hover {
+      opacity: 0.92;
+    }
+
+    /* Standard Diagram Wrap */
+    .diagram-wrap {
+      text-align: center;
+      margin: 22px 0;
+    }
+
+    .diagram-wrap img {
+      max-width: 820px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      cursor: zoom-in;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .diagram-wrap img:hover {
+      transform: scale(1.01);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .diagram-wrap figcaption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* Badges & Indicators */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 14px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .badge-primary {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .badge-tradeoff {
+      background: #fef2f2;
+      color: #be123c;
+      border: 1px solid #fecdd3;
+    }
+
+    .badge-tip {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+    }
+
+    /* Semantic Educational Lists */
+    ul.edu-list {
+      margin: 10px 0 18px;
+      padding-left: 22px;
+      list-style-type: disc;
+    }
+
+    ul.edu-list li {
+      font-size: 0.93rem;
+      color: #334155;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    /* Lightbox Modal */
+    #imageModal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      padding-top: 40px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(4px);
+    }
+
+    #imageModal .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    #imageModal .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f1f5f9;
+      font-size: 38px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #imageCaption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #cbd5e1;
+      padding: 10px 0;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 50px 20px 32px;
+      font-size: 0.88rem;
+    }
+
+    footer.site-footer a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    footer.site-footer a:hover {
+      color: #38bdf8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
-  
-  
-<p class="code"><br>
 
-  <script type="text/javascript">
-  
-    $(document).ready(function() {
-      $('body').bind('cut copy paste', function (e) {
-        e.preventDefault();
-      })
-      $(".code").on("contextmenu", function(e) {
-        return false;
-      })
-    })
-    
-    </script>
-
-
-</body>
-</html>
-
-
-<!-- Text DISABLE end HERE-->
-
-
-
-
-
-
-<!-- Side Navigation -->
-
-<!--  <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
-  <h1 class="w3-xxxlarge w3-text-theme">Bitew Studio Lab</h1>
-  <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
-  <a href=" https://www.bitews.com/resource/camera-movement" class="w3-bar-item w3-button">Camera Movement</a>
-  <a href="https://www.bitews.com/resource/how-camera-works" class="w3-bar-item w3-button">How Camera Works</a>
-  <a href="https://www.bitews.com/resource/the-interview" class="w3-bar-item w3-button">The Interview</a>
-  <a href=" https://www.bitews.com/resource/audio" class="w3-bar-item w3-button">Audio</a>
-</nav> -->
-
-<!-- Header ይህ ክፍል ከመጀመሪያ ላይ የሚገኘው ሄደር ነው። ከለሩን ከታች በማስገባት መቀየር ይቻላል -->
-
-
-
-<header class="w3-container  w3-padding" id="myHeader">
-
-<!--  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> -->
-
-<div class="w3-row-padding w3-center w3-margin-top ">
-
-  <h1 class="w3-jumbo" class="code"> <b> How Camera Works      <br> </b> </h1>
-  
-   <!--  <h1 style="text-align:center;" class="code" > Understanding How camera captures images: Parts of the Camera:
-      Still or DSLR Camera </h1> <br>-->
-  
-      <button class="w3-btn w3-xlarge w3-pink w3-hover-grey"
-       onclick="document.getElementById('id01').style.display='block'" style="font-weight:900;">About Bitew Studio Lab</button>
+  <!-- Top Sticky Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="#home" class="brand-tag">
+        <i class="fa fa-camera-retro w3-text-blue"></i>
+        <span>Bitew Studio Lab <small style="font-size:0.75rem; color:#64748b;">(BSL)</small></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#anatomy">Camera Anatomy</a>
+        <a href="#lens">Lens &amp; Focal Length</a>
+        <a href="#aperture">Light &amp; Aperture</a>
+        <a href="#iso">Gain &amp; ISO</a>
+        <a href="#shutter">Shutter &amp; ND Filters</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Modal ይህ ክፍል About Bitew Studio Lab ክሊክ ሲደረግ ሌላ የሚከፈት ዊንዶ መጠቀሚያ ኮድ እዚህ ይጀምራል-->
-
-<div id="id01" class="w3-modal ">
-    <div class="w3-modal-content w3-card-4 w3-animate-top">
-      <header class="w3-container w3-yellow"> 
-        <span onclick="document.getElementById('id01').style.display='none'"
-        class="w3-button w3-display-topright">×</span>
-        <h4 class="code" style="text-align:center;" >What We Do/service... <br> </h4>
-        <h5 class="code" style="text-align:center;" >Here’s what we can do for you. <i class="fa fa-smile-o"></i>  <br> </h5>
-      </header>
-      <div class="w3-padding w3-blue">
-        <p class="code" > We like to think of ourselves as your creative partner. You bring your passion and intent; we provide our expertise and love of design. <br> </p>
-
-
-        <p>Go to our <a class="w3-btn w3-red " href="#">BSL WEBSITE</a> to learn more!</p>
-
-      </div>
-      <footer class="w3-container w3-white">
-        <p style="text-align:center;">BITEW STUDIO LAB</p>
-      </footer>
+  <!-- Hero Header -->
+  <section class="hero-banner-container" id="home">
+    <h1>How Camera Works</h1>
+    <p>
+      Understanding How Cameras Capture Images: Exploring the optical pathways, physical components, exposure mechanics, and sensor sensitivities of Still, DSLR, and Mirrorless systems.
+    </p>
+    <div>
+      <button class="w3-btn w3-pink w3-round-large w3-padding" style="font-weight: 600;" onclick="document.getElementById('id01').style.display='block'">
+        About Bitew Studio Lab
+      </button>
     </div>
-</div>
+  </section>
 
-<!-- Modal ይህ ከዚህ በላይ ያለው ክፍል About Bitew Studio Lab ክሊክ ሲደረግ ሌላ የሚከፈት ዊንዶ መጠቀሚያ ኮድ  ሲሆን ከዚህ በላይ ያልቃል -->
+  <!-- Main Content Wrapper -->
+  <main class="main-wrapper">
 
+    <!-- SECTION 1: CAMERA ANATOMY -->
+    <section id="anatomy" class="edu-section">
+      <h2 class="section-header">
+        <i class="fa fa-cogs w3-text-blue"></i>
+        Understanding How Camera Captures Images: Parts of the Camera
+      </h2>
+      <p style="font-size: 1.05rem; color: #334155;">
+        Whether working with a traditional film camera, a Digital Single-Lens Reflex (DSLR), or a modern mirrorless system, cameras capture photons and focus them onto a light-sensitive recording medium through synchronized optical and electronic operations.
+      </p>
 
-
-        <!-- ይህ ከዚህ በታች ያለው ኮድ በቀይ ታብ የተቀመጠው "download application" ሲሆን ክሊክ ሲደረግ ሌላ ዊንዶ የሚመጣው ከዚህ በታች ይጀምራል -->
-
-        <div class="w3-center w3-padding-32  "> 
-
-        
-       <!--  <button class="w3-button  w3-red  w3-padding-large w3-section w3-hide-small" onclick="document.getElementById('download').style.display='block'">
-          <i class="fa fa-download"></i> Download Application </button>
-  
-        <h5>Available for <i class="fa fa-android w3-xlarge w3-text-green  "></i> <i class="fa fa-apple w3-xlarge"></i> <i class="fa fa-windows w3-xlarge w3-text-red"></i></h5>
-  
+      <div class="diagram-wrap">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSlTGXA9MW-PE85DtodbPzZRp2SpF8btnADxYEtsQDyWqzTG7J1ziJM7j1DieF6I-cyUuqWKurk3ELMmopcF8lCn0f299L-agC6P8SHI1Dqw9gxH8pzb5FcbV7TfrZ7lQRkMRFIhdcMbpl8vj3mwfMgpDyuSfl4TYGSk_G0aNrTj5BFgXVRx8YyDLbVY4/s1270/16.png"
+             alt="Internal Camera Anatomy and Light Path"
+             onclick="openLightbox(this, 'Understanding How Camera Captures Images: Parts of Still & DSLR Cameras')">
+        <figcaption>Complete Internal Diagram: Lens barrel optical path, reflexive mirror, pentaprism, and image sensor plane</figcaption>
       </div>
-      <div class="w3-col l4 m6">
-       
-        <div class="w3-center w3-hide-large w3-hide-medium">
+    </section>
 
-          <button class="w3-button  w3-block w3-padding-large" onclick="document.getElementById('download').style.display='block'">
-            <i class="fa fa-download "></i> Download Application -->
+    <!-- SECTION 2: LENS & FOCAL LENGTH -->
+    <section id="lens" class="edu-section">
+      <h2 class="section-header">
+        <i class="fa fa-circle-o-notch w3-text-blue"></i>
+        The Camera Lens &amp; Focal Length
+      </h2>
 
-            
-          </button>
-         
+      <div class="grid-2">
+        <!-- Lens Components Card -->
+        <article class="content-card">
+          <div class="card-body">
+            <span class="badge badge-primary"><i class="fa fa-wrench"></i> Core Optical Hardware</span>
+            <h3 class="card-title">Lens Anatomy &amp; Controls</h3>
+            <img class="card-media"
+                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjalRj8mdV8r5U35aVzZcSI1zHdImPb5or1mGUvLVi7SAf6Jz59GPDKS1iQaMSuXjM99diwDph0r2oGw3MnI1x8OlZxRGfZHmMMlv5xypMlcEQAYNdy789X-eTrEgXgezd61gc3k8QGh30U9BM4F_mfWAQRdoYEvPBpo0WvJe4-fRTwX5P_UhbZ2C9yDw/s1506/1.png"
+                 alt="Lens Structure Diagram"
+                 onclick="openLightbox(this, 'Lens Anatomy: Optical Elements, Aperture, and Iris Mechanism')">
+            <ul class="edu-list">
+              <li><strong>Aperture / F-Stop / Iris:</strong> Mechanical diaphragm opening regulating light volume and depth of field.</li>
+              <li><strong>Focal Length:</strong> Defines angle of view (Wide, Standard, Telephoto, or Zoom).</li>
+              <li><strong>Focus:</strong> Aligning lens elements to resolve subjects cleanly on the sensor.</li>
+              <li><strong>Neutral Density (ND) Filters:</strong> Optical filters placed in front of the lens to cut light. Professional video cameras feature them built-in on a rotating internal wheel.</li>
+              <li><strong>Shutter &amp; Shutter Speed:</strong> Physical or electronic gate timing the duration of exposure.</li>
+              <li><strong>Image Sensor (Film):</strong> The photosensitive silicon plane (CMOS/CCD) or celluloid film stock.</li>
+              <li><strong>Sensitivity / Gain / ISO:</strong> Electronic signal amplification of the sensor.</li>
+              <li><strong>White Balance:</strong> Color temperature compensation ensuring neutral whites across lighting conditions.</li>
+              <li><strong>Viewfinder / Display:</strong> Film movie cameras and DSLRs utilize optical viewfinders with reflexive mirrors and pentaprisms; digital cinema cameras, mirrorless bodies, and video cameras use digital electronic viewfinders (EVFs) and LCD monitor displays.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Focal Length Card -->
+        <article class="content-card">
+          <div class="card-body">
+            <span class="badge badge-primary"><i class="fa fa-arrows-h"></i> Optics & Perspective</span>
+            <h3 class="card-title">Focal Length</h3>
+            <img class="card-media"
+                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir2HO1Q5fwacba1QIZHX-8ESmCvg8YTzMyoqjQH7zv0aRSaxy00tH5v9MYL6WfJdkvF_yfSiW_5jPsUCflB9QD8MitEueeHIof0-TzTevEeJO5xK6FxXpm9yCNDa0O0VmSFQ9n61dcVqqMiB0Xh27fxkU9ZU78MQMUUaHBChfvdUaK6Xjyht7DnPGWmSg/s1814/2.png"
+                 alt="Focal Length Comparison"
+                 onclick="openLightbox(this, 'Focal Length Comparison: Angle of View from Wide to Telephoto')">
+            <ul class="edu-list">
+              <li>Lenses come in various focal lengths, ranging from Ultra Wide-Angle (fisheye) to Super Telephoto (telescope).</li>
+              <li><strong>Two Primary Optical Types:</strong>
+                <ul style="padding-left: 18px; margin-top: 4px;">
+                  <li><strong>Zoom Lenses:</strong> Variable focal length allowing changes in framing without moving the camera base.</li>
+                  <li><strong>Prime Lenses:</strong> Fixed focal length offering superior optical sharpness and wider maximum apertures.</li>
+                </ul>
+              </li>
+              <li>Focal length is measured in <strong>millimeters (mm)</strong>. The smaller the number (e.g., 18mm), the wider the angle of view; the larger the number (e.g., 200mm), the narrower the angle of view (telephoto).</li>
+              <li><strong>Visual Impact on Perspective:</strong> Focal length plays as strong a role in creating visual media as lighting does — maybe even more so. If you want to shoot a person in a Medium Shot (from the stomach up), you could place the camera very close with a wide lens, or step 20 feet back and zoom in with a telephoto lens. While the size of the subject in the frame remains identical, everything else changes — particularly the subject's relationship to the background environment and spatial depth compression.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 3: LIGHT & APERTURE -->
+    <section id="aperture" class="edu-section">
+      <h2 class="section-header">
+        <i class="fa fa-sun-o w3-text-blue"></i>
+        Light &amp; Aperture (The Exposure Triangle)
+      </h2>
+
+      <div class="grid-2">
+        <div>
+          <h3 class="sub-header" style="margin-top:0;">Managing Incident Light &amp; The Iris</h3>
+          <p>
+            Of course, the most obvious way to alter exposure is to add or remove light from the environment. This can be achieved through natural illumination (filming in direct sunlight, in open shade, or under overcast skies) or with dedicated artificial lighting instruments (utilizing bigger, brighter lights or dimming fixtures).
+          </p>
+          <p>
+            <strong>Aperture Mechanics:</strong> The aperture is a mechanical iris inside the lens housing that restricts or widens the beam of incoming light, functioning much like a water faucet handle controlling the volume of water traveling through a pipe.
+          </p>
+
+          <ul class="edu-list">
+            <li><strong>Small Aperture (High f-stop number, e.g., f/16, f/22):</strong> Less light reaches the sensor, resulting in a large / deep depth of field where both foreground and background stay in focus.</li>
+            <li><strong>Large Aperture (Low f-stop number, e.g., f/1.4, f/2.8):</strong> More light enters the lens, creating a shallow depth of field where the subject is sharp against a soft, blurred background.</li>
+            <li><strong>Terminology:</strong> Also frequently referred to as the <em>Iris</em> or <em>f-stop</em>.</li>
+            <li><strong>f-Stop Scale:</strong> The numerical value defining the opening diameter relative to focal length. A smaller number denotes a wider physical aperture.</li>
+            <li><strong>Maximum Aperture:</strong> The widest physical opening (smallest f-number) is dictated by the optical engineering and physical build of the lens.</li>
+          </ul>
+        </div>
+
+        <div class="diagram-wrap">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwhmfyGzS5w7PH2pbAkOB2vseDaA-Km8YJNichH5WWvtNauJVlu-TK9YlTeRmz096XXH7uzOOAuqi5XLnTaTABpGF_lvb2eqZiE7hN2HpJAP_BGbGQnszS0W0n_cgYvreaT6ZlR9Gg0yyHNKdrtOFkArZwWMvNQYVurbi3a7_fuwgDjM41k5YFCBJoyEg/s1344/3.png"
+               alt="Aperture Blades and f-stop Scale"
+               onclick="openLightbox(this, 'Aperture Blade Openings: f/1.4 to f/22 and Depth of Field Impact')">
+          <figcaption>Aperture openings: Larger openings (f/1.4) capture more light with shallow focus; smaller openings (f/16) maximize depth of field</figcaption>
         </div>
       </div>
+    </section>
+
+    <!-- SECTION 4: GAIN & ISO -->
+    <section id="iso" class="edu-section">
+      <h2 class="section-header">
+        <i class="fa fa-signal w3-text-blue"></i>
+        Sensor Sensitivity: Gain &amp; ISO
+      </h2>
+
+      <p>
+        Exposure sensitivity determines how responsive the recording medium is to photons hitting the sensor surface. Video engineering and photography use different measurement systems for this property:
+      </p>
+
+      <div class="grid-2">
+        <article class="content-card">
+          <div class="card-body">
+            <span class="badge badge-primary"><i class="fa fa-video-camera"></i> Broadcast & Video Production</span>
+            <h3 class="card-title">Gain (in Decibels - dB)</h3>
+            <img class="card-media"
+                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaJQcD-kYjfYaNOropT9Ou1x1X_ht9JL8SKRGjcaZg-z3rx0sTN7XDt7MXL8t1ybyCWOCXEGDxEhoa-rXabA0uFEQWwu8wkvdPRTwEPK1O3ZIwmfwl4zY2-STl1oTwcxRJ5m_r9wlBHQWYj9LLg5bM4mGNWwbN_UPLw8bBmKPK_1jjDSzUw-n8jhKLd80/s1384/4.png"
+                 alt="Broadcast Camera Gain Switch"
+                 onclick="openLightbox(this, 'Video Camera Gain Switch: 0dB, +6dB, +12dB')">
+            <p>
+              Video cameras measure sensor sensitivity amplification as <strong>Gain</strong> in decibels (dB), baseline starting at 0 dB and increasing in steps of +3 dB to double the electronic sensitivity (+3dB, +6dB, +9dB, +12dB, etc.).
+            </p>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-body">
+            <span class="badge badge-primary"><i class="fa fa-camera"></i> Still & Cinema Cameras</span>
+            <h3 class="card-title">ISO Rating</h3>
+            <img class="card-media"
+                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM7guFbzRHAa9F5GGm5PfOdrYaU2Ko-umkT_PLhyT3yxzlIfFdKtGlEfGr77jgjLmDiB670x0UnyEUvQcuBqo2ebp36Y1968jO8nXD9rVdUmXw9FxEhDO7tQq9I94zpqd7S2dV-OFaGCHzdgp9L6ni7S9ddjMndvCz_mH_l7wKmhlKqmBKzP_cQ8lPdAc/s1430/5.png"
+                 alt="DSLR ISO Menu Selection"
+                 onclick="openLightbox(this, 'Digital Camera ISO Sensitivity Levels')">
+            <p>
+              DSLR, mirrorless, and digital cinema cameras use the <strong>ISO</strong> scale (standardized from traditional ASA film speed), with native baseline sensitivity usually set at ISO 100 or ISO 200.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="w3-card w3-round-large w3-padding-24 w3-margin-top" style="border:1px solid var(--card-border); background:#ffffff;">
+        <h4 class="sub-sub-header" style="margin-top:0;">The Gain / ISO Trade-Off</h4>
+        <ul class="edu-list">
+          <li><strong>Sensor Sensitivity:</strong> Defines the responsiveness of the digital image sensor (or film emulsion speed) to collecting light.</li>
+          <li><span class="badge badge-tradeoff">High Gain / High ISO</span> The higher the Gain or ISO value, the more sensitive the sensor becomes, enabling you to shoot in dim environments. <strong>Trade-Off:</strong> The image becomes noisier (or displays heavy grain in film), reducing dynamic range, color saturation, and fine detail.</li>
+          <li><span class="badge badge-tip">Low Gain / Low ISO</span> The lower the Gain or ISO setting (e.g., ISO 100, 0 dB), the cleaner, crisper, and more defined the image. <strong>Trade-Off:</strong> The sensor is less light-sensitive, requiring stronger ambient light or wide apertures for proper exposure.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SHUTTER & ND FILTERS -->
+    <section id="shutter" class="edu-section">
+      <h2 class="section-header">
+        <i class="fa fa-sliders w3-text-blue"></i>
+        Shutter Speed, Frame Rate &amp; Neutral Density (ND) Filters
+      </h2>
+
+      <p>
+        Controlling the duration of sensor exposure and managing sunlight through optical density filters:
+      </p>
+
+      <div class="grid-2">
+        <article class="content-card">
+          <div class="card-body">
+            <h3 class="card-title">Shutter Speed &amp; Frame Rate (FPS)</h3>
+            <img class="card-media"
+                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzNUSsk36fQWL55bBDeZTDkh_iM4JInOdkEwQvodvXHRieQct2B0-HKCP_SocO-UrCTonCDPRM_5hMnK7vTqSCtbuEuOnwQfPr6fBqqwATsHDeh6wSbFfXGW1YkrqxWiQqJKBZqiyIOmvpeoEtVrasFVZjf19dneP5m_PXHFwYN5y75e_Ac_mQkGy6Ecc/s1450/6.png"
+                 alt="Shutter Speed and Motion Blur"
+                 onclick="openLightbox(this, 'Shutter Speed Mechanics: Exposure Time & Motion Blur')">
+            <p>
+              The longer the sensor is exposed to light, the more light it collects. This happens within fractions of a second.
+            </p>
+            <p>
+              <strong>Frame Rate Limits:</strong> If shooting video at 30 fps (Frames Per Second), each frame can only be exposed for a maximum of 1/30 of a second or less.
+            </p>
+            <p>
+              <span class="badge badge-primary">The 180-Degree Rule</span> In standard cinematography, shutter speed is set to double the frame rate (e.g., 24 fps at 1/48s or 1/50s; 30 fps at 1/60s) to produce natural motion blur that matches human vision. Faster shutter speeds (e.g., 1/500s) eliminate motion blur and make fast action look crisp and staccato.
+            </p>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-body">
+            <h3 class="card-title">Neutral Density (ND) Filters</h3>
+            <img class="card-media"
+                 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVUnbnnwNGH75U-kA_GlrYH5l74GFYA5tIET2RRZPpq0IdVbpPN_TfiLQk4M4qqrLU_iI4GqwwOSPqw4nG7oD92X1PM9e42U6sxivIGHpWD-Rdr9ODNB2CAWhGtDmfnRVvxJi8kogNRX6TSnMcydrlEvDK_UdIci3HvY48Ug5OPxqgtt-x_U3Vrw1IBms/s1456/7.png"
+                 alt="Neutral Density Filter Wheel and Glass"
+                 onclick="openLightbox(this, 'Neutral Density (ND) Filters: Optical Exposure Attenuation')">
+            <p>
+              <strong>Neutral Density</strong> filters function as "sunglasses for your camera." When shooting outdoors in bright direct sunlight, you often want a wide aperture (e.g., f/2.0) to blur the background while locking the video shutter speed at 1/50s. Without an ND filter, the image would be severely overexposed and washed out.
+            </p>
+            <p>
+              ND filters evenly reduce the intensity of all wavelengths of incoming light without altering color balance or hue, giving you complete artistic control over shutter speed and depth of field in broad daylight.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT -->
+    <section id="contact" class="edu-section w3-center">
+      <h2 class="section-header" style="border-bottom:none; justify-content:center;">
+        Get in Touch with Bitew Studio Lab
+      </h2>
+      <p class="w3-text-grey" style="max-width: 620px; margin: 0 auto 20px;">
+        Feel free to message us! We are here to discuss your ideas, camera gear setups, and photographic approaches to design.
+      </p>
+
+      <div style="margin: 24px 0;">
+
+      <!--   <p style="font-size:1.15rem; font-weight:500;">
+          <i class="fa fa-phone fa-fw w3-text-blue" style="font-size:1.3rem;"></i>
+          <a href="tel:+16502298641" style="color:var(--link-blue); text-decoration:none;">+1 (650) 229-8641</a>
+        </p>
+        <p style="color:var(--text-muted);">Palo Alto, CA</p> -->
+
+        <a href="#" target="_blank" class="w3-btn w3-black w3-round-large w3-padding-large">
+          <i class="fa fa-envelope w3-margin-right"></i> SEND MESSAGE
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: About Bitew Studio Lab -->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top w3-round-large" style="max-width: 580px; overflow: hidden;">
+      <header class="w3-container w3-yellow w3-padding-16">
+        <span onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-display-topright w3-hover-none w3-hover-text-black"
+              style="font-size:1.5rem; cursor:pointer;">&times;</span>
+        <h4 style="margin:0; font-weight:700; text-align:center;">What We Do / Service</h4>
+        <h5 style="margin:4px 0 0; font-weight:500; text-align:center; font-size:0.95rem;">
+          Here’s what we can do for you. <i class="fa fa-smile-o"></i>
+        </h5>
+      </header>
+      <div class="w3-container w3-blue w3-padding-24">
+        <p style="color:#ffffff; font-size:1rem; line-height:1.6;">
+          We like to think of ourselves as your creative partner. You bring your passion and intent; we provide our expertise and love of design.
+        </p>
+        <p style="margin-top: 20px;">
+          Go to our <a class="w3-btn w3-red w3-round" href="#" target="_blank">BSL WEBSITE</a> to learn more!
+        </p>
+      </div>
+      <footer class="w3-container w3-white w3-padding-8">
+        <p style="margin:0; text-align:center; font-size:0.85rem; font-weight:600; letter-spacing:1px; color:#0f172a;">
+          BITEW STUDIO LAB
+        </p>
+      </footer>
     </div>
   </div>
-  
-  <!-- Modal -->
- <!-- <div id="download" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content" style="padding:32px">
-      <div class="w3-container w3-white">
-        <i onclick="document.getElementById('download').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
-        <h2 class="w3-wide">DOWNLOAD</h2>
-        <p>Download the app in AppStore, Google Play or Microsoft Store.</p>
-        <i class="fa fa-android w3-large w3-text-green"></i> <i class="fa fa-apple w3-large w3-text-orange"></i> <i class="fa fa-windows w3-large w3-text-blue"></i>
-        <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-        <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" 
-        onclick="document.getElementById('download').style.display='none'"> Download</button>
-      </div>
-    </div>
-  </div> -->
-  
-  
-   <!-- ይህ ከዚህ በላይ ያለው ኮድ በቀይ ታብ የተቀመጠው "download application" ሲሆን ክሊክ ሲደረግ ሌላ ዊንዶ የሚመጣው ከዚህ በላይ ያልቃል -->
 
-   
-
-
-   <div class="w3-row-padding w3-center w3-margin-top ">
-
-    <h1 style="text-align:center;" class="code" > Understanding How camera captures images: Parts of the Camera:
-      Still or DSLR Camera </h1> <br>  
-
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSlTGXA9MW-PE85DtodbPzZRp2SpF8btnADxYEtsQDyWqzTG7J1ziJM7j1DieF6I-cyUuqWKurk3ELMmopcF8lCn0f299L-agC6P8SHI1Dqw9gxH8pzb5FcbV7TfrZ7lQRkMRFIhdcMbpl8vj3mwfMgpDyuSfl4TYGSk_G0aNrTj5BFgXVRx8YyDLbVY4/s1270/16.png " alt="Sandwich" style="width:100%">
-
-
-
-
-
-   <!--  <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSlTGXA9MW-PE85DtodbPzZRp2SpF8btnADxYEtsQDyWqzTG7J1ziJM7j1DieF6I-cyUuqWKurk3ELMmopcF8lCn0f299L-agC6P8SHI1Dqw9gxH8pzb5FcbV7TfrZ7lQRkMRFIhdcMbpl8vj3mwfMgpDyuSfl4TYGSk_G0aNrTj5BFgXVRx8YyDLbVY4/s1270/16.png " 
-    alt="App" width="335" height="197"> -->
-
-   
-    
-         <!-- <h2 style="text-align:center;"> Camera Movement   </h2><br> -->
-    
-    
-    <div class="w3-half w3-padding-16 ">
-      <div class=" w3-container w3-row w3-border w3-brown " style="min-height:460px ">
-      <h1 class="code" >   Lens  </h1> <br>
-    
-      <!-- አይከን ወይም ፎቶ ኦን እና ኦፍ አድርጎ ለመጠቀም ኮዱ እዚህ ይጀምራል -->
-    
-     <!--  <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i> -->
-    
-      <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjalRj8mdV8r5U35aVzZcSI1zHdImPb5or1mGUvLVi7SAf6Jz59GPDKS1iQaMSuXjM99diwDph0r2oGw3MnI1x8OlZxRGfZHmMMlv5xypMlcEQAYNdy789X-eTrEgXgezd61gc3k8QpGh30U9BM4F_mfWAQRdoYEvPBpo0WvJe4-fRTwX5P_UhbZ2C9yDw/s1506/1.png" 
-          alt="App" width="335" height="197">
-    
-      <!--  <img src=" #" style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone"> -->
-      
-      
-     <!-- አይከን ወይም ፎቶ ኦን እና ኦፍ አድርጎ ለመጠቀም ኮዱ ከዚህ በላይ ያልቃል -->
-    
-      <p class="code" style= "text-align:left;"  > 
-        
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Aperture / F-Stop / Iris <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focal length (Wide / Telephoto / Zoom) <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focus <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Filter (Neutral Density) These are placed in front of lens. Pro Video cameras have them built-in. <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Shutter <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Shutter speed <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Image Sensor (Film) <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Sensitivity / Gain / ISO <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  White Balance <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Viewfinder/Display <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Film movie cameras and DSLRs have optical viewfinders <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Digital cameras, Video, DSLR, Mirrorless etc. have display screens and some have digital viewfinders. <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focus <br> </li>
-
-
-
-
-       <br> </p>
-    
-             
-    
-            <!--  <p><a href=" https://www.bitews.com/shop" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p> -->
-     
-      </div>
-    </div>
-    
-    <div class="w3-half w3-padding-16">
-      <div class="w3-card w3-container w3-border w3-green" style="min-height:460px">
-      <h1> Focal Length </h1><br>
-    
-     <!--  <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i> -->
-    
-      <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir2HO1Q5fwacba1QIZHX-8ESmCvg8YTzMyoqjQH7zv0aRSaxy00tH5v9MYL6WfJdkvF_yfSiW_5jPsUCflB9QD8MitEueeHIof0-TzTevEeJO5xK6FxXpm9yCNDa0O0VmSFQ9n61dcVqqMiB0Xh27fxkU9ZU78MQMUUaHBChfvdUaK6Xjyht7DnPGWmSg/s1814/2.png" 
-          alt="App" width="335" height="197">
-    
-     <!--  <img src="#" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone"> -->
-    
-     
-      
-      <p class="code" style= "text-align:left;" >  
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Lenses come in various focal lengths. From Ultra Wide Angle (fish-eye) to Super Telephoto (think telescope) <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Regardless of focal length, there are 2 types. <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Zoom: where the focal length can change <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Prime: fixed focal length <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focal length is described in millimetres.  The smaller the number, the wider the angle. 
-          The larger the mm (say 200mm) the more narrow the angle of view: telephoto.<br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Focal length plays as strong a roll in creating visual media as lighting does.  Maybe more so. 
-          If you want to shoot a person in a Medium Shot (From stomach up) you could set up the camera
-           very close with a wide lens, or set up 20 feet away and use a telephoto lens. 
-          While the size of the subject in the frame remains the same, everything else changes.
-           Particularly the subjects relation to the background...or their environment. <br> </li>
-
-
- <br> </p>
-    
-           
-      
-      </div>
-    </div>
-    
-    
-    <!-- xx -->
-    
-    
-    <div class="w3-row-padding w3-center w3-margin-top ">
-    
-      <h3 style="text-align:center;">   </h3><br>
-    
-    
-    <div class="w3-half w3-padding-16 ">
-    
-      <div class=" w3-card w3-container w3-border w3-indigo " style="min-height:460px">
-    
-      <h1 class="code" >  Light  </h1><br>
-    
-     <!--  <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i> -->
-    
-    <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwhmfyGzS5w7PH2pbAkOB2vseDaA-Km8YJNichH5WWvtNauJVlu-TK9YlTeRmz096XXH7uzOOAuqi5XLnTaTABpGF_lvb2eqZiE7hN2HpJAP_BGbGQnszS0W0n_cgYvreaT6ZlR9Gg0yyHNKdrtOFkArZwWMvNQYVurbi3a7_fuwgDjM41k5YFCBJoyEg/s1344/3.png" 
-          alt="App" width="335" height="197">
-      
-     
-    
-      <p class="code" style= "text-align:left;"  > 
-
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>   Of course, the most obvious thing to change exposure is add or remove light. Either natural light (direct sunlight,
-          or shoot in shade, under cloudy sky, etc.) or using lighting instruments. Bigger Brighter lights, or dim the lights. <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Aperture <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  This is a physical part of a lens, and controls the amount of light coming through 
-          much the way a water faucet handle controls the amount of water coming through a faucet. <br> </li>
-
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Small Aperture: Less light, more depth of field <br> </li>
-
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Large aperture: More light comes in, but shallow depth of field. <br> </li>
-
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li> It is referred to by many names <br> </li>
-
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li> Iris<br> </li>
-
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  f/stop: The  f-stop is the actual number used to define the opening. Smaller number:Wider open <br> </li>
-
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  Maximum (maximum open, or smallest number) is dependent on the physical design of the lens.  <br> </li>
-
-
-<br> </p>
-    
-            
-     
-      </div>
-    </div>
-    
-    <div class="w3-half w3-padding-16 ">
-      <div class="w3-card w3-container w3-border w3-purple" style="min-height:460px">
-      <h1 class="code" > Gain / ISO  </h1><br>
-    
-     <!--  <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i> -->
-    
-      <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaJQcD-kYjfYaNOropT9Ou1x1X_ht9JL8SKRGjcaZg-z3rx0sTN7XDt7MXL8t1ybyCWOCXEGDxEhoa-rXabA0uFEQWwu8wkvdPRTwEPK1O3ZIwmfwl4zY2-STl1oTwcxRJ5m_r9wlBHQWYj9LLg5bM4mGNWwbN_UPLw8bBmKPK_1jjDSzUw-n8jhKLd80/s1384/4.png" 
-          alt="App" width="335" height="197">
-
-
-
-      <img class="w3-image w3-round-large" src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgM7guFbzRHAa9F5GGm5PfOdrYaU2Ko-umkT_PLhyT3yxzlIfFdKtGlEfGr77jgjLmDiB670x0UnyEUvQcuBqo2ebp36Y1968jO8nXD9rVdUmXw9FxEhDO7tQq9I94zpqd7S2dV-OFaGCHzdgp9L6ni7S9ddjMndvCz_mH_l7wKmhlKqmBKzP_cQ8lPdAc/s1430/5.png" 
-      alt="App" width="335" height="197">
-
-    
-      <p class="code" style= "text-align:left;"  > 
-        
-        <li   li class="code" style= "text-align:left;" ul class="a" li> Video Cameras use GAIN, measured starting at 0 dB, moving up in increments 
-          of 3 to double sensitivity. (+3dB, +6dB, =9dB, etc.)<br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li> DSLR and Mirrorless cameras use ISO. The base here is usually ISO 100. <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li> This is the sensitivity of the image sensor to collecting light. (Or the speed of film in a film camera) <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>The more gain, or the higher the Gain or ISO, the more sensitive to light the sensor becomes, allowing you to shoot with less light. 
-          TRADE-OFF: the noisier the image becomes. (Or more grainy with film) <br> </li>
-
-        <li   li class="code" style= "text-align:left;" ul class="a" li>  The lower the Gain or ISO, the more defined and clean the image. TRADE-OFF: less light sensitive, requiring more light for proper exposure.<br> </li>
-
- <br> </p>
-    
-           
-      
-      </div>
-    </div>
-    
-    
-    
-    
-    
-    <!-- ሁለት ኮለመን ያለው ኮድ እዚህ ይጀምራል-->
-    
-    
-    
-    <div class=" w3-container w3-padding-64 white ">
-    
-     <img src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzNUSsk36fQWL55bBDeZTDkh_iM4JInOdkEwQvodvXHRieQct2B0-HKCP_SocO-UrCTonCDPRM_5hMnK7vTqSCtbuEuOnwQfPr6fBqqwATsHDeh6wSbFfXGW1YkrqxWiQqJKBZqiyIOmvpeoEtVrasFVZjf19dneP5m_PXHFwYN5y75e_Ac_mQkGy6Ecc/s1450/6.png"
-      style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt=" # "> 
-
-
-      <img src=" https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVUnbnnwNGH75U-kA_GlrYH5l74GFYA5tIET2RRZPpq0IdVbpPN_TfiLQk4M4qqrLU_iI4GqwwOSPqw4nG7oD92X1PM9e42U6sxivIGHpWD-Rdr9ODNB2CAWhGtDmfnRVvxJi8kogNRX6TSnMcydrlEvDK_UdIci3HvY48Ug5OPxqgtt-x_U3Vrw1IBms/s1456/7.png"
-      style="width:50%" onclick="onClick(this)" class="w3-hover-opacity" alt=" # "> 
-    
-      <div class="w3-center" >
-        <h2 class="code" > Other Factors  <br> </h2>
-      
-    <!-- <h3 class="code" > PEDESTAL <br> </h3> -->
-    
-    <p class="code" style= "text-align:left;"  > 
-      
-      
-      <li   li class="code" style= "text-align:left;" ul class="a" li> Neutral Density <br> </li>
-
-
-      <li   li class="code" style= "text-align:left;" ul class="a" li> Shutter Speed <br> </li>
-
-
-
-      <li   li class="code" style= "text-align:left;" ul class="a" li> The longer time the sensor is exposed to light, the more light it can collect. This happens in a very short amount of time. 
-        If you are shooting at 30 fps (Frames Per Second) each frame can only be exposed for 1/30 of a second or less.  <br> </li>
-
-
- <br> </p>
-    
-
-      </div>
-  
-       
-      </div>
-      </div>
-    </div>
-    
-
-
-  
-  <!--  <h2 style="text-align:center"> Have Questions?</h2>
-  
-  
-  
-   <p style="text-align:center;" class="code"  > Feel free to message us! we are here to discuss your ideas and bring them to life.<br>
-
-    Feel free to adjust the description based on your specific style and approach to design.  <br> </p> -->
-
-    
-
-    <!-- Contact Section -->
-
-
-   
-
-
-    <div class=" w3-padding-16 ">
-
-      <!--   w3-padding-64  -->
-
-
-<div class="  w3-light-grey  " >
-
-
-<!--  w3-container -->
- 
-
-<h3 style="text-align: center"> The End </h3>
-
-<!-- <p style="text-align: center">Lets get in touch. Send us a message to Palo Alto, CA:</p> -->
-
-<div style="margin-top:10px">
-
-
- <!--  <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +1(201) 374-0818</p>
-    <p> <i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right" > </i> Email: BSL@bitews.com</p> 
-
-    <div class="w3-center" >
-
-    <p> <i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i>  <a href=" # " target="_blank" class="w3-hover-text-green" > +1(650) 229-8641 </a></p>
-
-   <!--  <p> <i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i> Email: <a href=" # " target="_blank" class="w3-hover-text-green" > BSL@bitews.com</a></p> -->
-    
-    <div class="w3-center w3-padding-8  "> 
-  
-<!-- 
-  <p><a href=" https://forms.gle/MKPz9uc1tg59f51s5" class="w3-button w3-black"><i class="fa fa-envelope"> </i> SEND MESSAGE</a></p> -->
-
-  
-  
- 
-  <div class=" w3-padding-16"> 
-
-
-
- <!--footer start here-->
-
-
- 
-
-<!--   <footer class="w3-padding-32 w3-theme-d1 w3-center"> -->
-  
-    <a href="#myHeader" class="w3-button w3-blue"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-
-
-
-
-<!--     
-  <h4>Follow Us</h4>
-
-  
-  
-  <a class="w3-button w3-large w3-teal" href=" https://www.facebook.com/profile.php?id=100086062394930" title="Facebook"><i class="fa fa-facebook"></i></a>
-  <a class="w3-button w3-large w3-teal" href=" https://twitter.com/Bitewstudio" title="Twitter"><i class="fa fa-twitter"></i></a>
-  
-  <a class="w3-button w3-large w3-teal" href=" https://www.instagram.com/bitewstudio/" title="instagram"><i class="fa fa-instagram"></i></a>
-  <a class="w3-button w3-large w3-teal w3-hide-small" href=" https://www.linkedin.com/company/bitew-studio-lab/?viewAsMember=true" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-
-
-
-    
-  <a class="w3-button w3-large w3-teal w3-hide-small" href="#" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-
-
-  <p class="code" >IMPORTANT: <br> </p>
-
-    <p class="code"> We don't provide a copyright or trademark logo and we don't take responsibility for copyright or trademark-related issues.  <br> </p>
-
-      <p class="code">  We cannot accept work involving adult content, gambling, alcohol and pornography.  <br> </p>
-  
-
-    <p> Remember to check out our  <a href=" https://www.bitews.com/ " target="_blank" class="w3-hover-text-green"> Bitews.com</a></p>
-
-
-  
-
-    <a href=" https://www.bitews.com/policy/terms-of-service" target="_blank" class="w3-hover-text-green"> Terms & Conditions |</a>
-
-
-    <a href=" https://www.bitews.com/policy/privacy-policy" target="_blank" class="w3-hover-text-green">Privacy Policy  |</a>
-    
-    <a href=" https://www.bitews.com/policy/cookie-policy" target="_blank" class="w3-hover-text-green">Cookie Policy  |</a>
-    
-    <a href=" https://www.bitews.com/policy/acceptable-use-policy" target="_blank" class="w3-hover-text-green"> Acceptable Use Policy  |</a>
-
-    <a href=" https://www.bitews.com/policy/rp " target="_blank" class="w3-hover-text-green "> Refund Policy  |</a>
-
-   
-    <a href=" https://www.bitews.com/disclaimer " target="_blank" class="w3-hover-text-green "> Disclaimer </a> 
-
-    <p style="text-align:center;"> © Copyright 2024,  Bitew Studio Lab (BSL) and logo.  All right reserved.</p>
-
-
-
- <footer class="w3-container w3-theme-dark w3-padding-16">
-  
- 
-
-  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
-
-    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>   
-
-    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
-
-    <i class="fa fa-chevron-circle-up"></i></span></a>
+  <!-- MODAL: Lightbox for High-Res Diagrams -->
+  <div id="imageModal">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Enlarged Diagram View">
+    <div id="imageCaption"></div>
   </div>
-  
-  <div class="w3-right"> 
 
-    <p>Powered by <a href=" https://www.bitews.com/" title="BSL.LOGO" target="_blank"
-      class="w3-hover-text-green">BSL</a></p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="w3-content w3-center" style="max-width: 1000px;">
+      <a href="#home" class="w3-btn w3-blue w3-round w3-margin-bottom">
+        <i class="fa fa-arrow-up w3-margin-right"></i>To the top
+      </a>
 
-      
-    -->
+    <!--   <h4 style="color:#ffffff; margin: 16px 0 12px; font-weight: 600;">Follow Us</h4>
+      <div style="margin-bottom: 24px;">
+        <a class="w3-button w3-large w3-teal w3-round" href="https://www.facebook.com/profile.php?id=100086062394930" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+        <a class="w3-button w3-large w3-teal w3-round" href="https://twitter.com/Bitewstudio" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+        <a class="w3-button w3-large w3-teal w3-round" href="https://www.instagram.com/bitewstudio/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+        <a class="w3-button w3-large w3-teal w3-round" href="https://www.linkedin.com/company/bitew-studio-lab/?viewAsMember=true" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        <a class="w3-button w3-large w3-teal w3-round" href="#" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+      </div>
 
-</footer> 
+      <div style="font-size: 0.82rem; color: #94a3b8; max-width: 700px; margin: 0 auto;">
+        <p><strong>IMPORTANT:</strong> We don't provide a copyright or trademark logo and we don't take responsibility for copyright or trademark-related issues. We cannot accept work involving adult content, gambling, alcohol and pornography.</p>
+        <p>Remember to check out our official portal at <a href="https://www.bitews.com/" target="_blank" class="w3-text-green">Bitews.com</a>.</p>
+      </div>
 
-<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
-<script>
-// Side navigation
-function w3_open() {
-  var x = document.getElementById("mySidebar");
-  x.style.width = "100%";
-  x.style.fontSize = "40px";
-  x.style.paddingTop = "10%";
-  x.style.display = "block";
-}
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
+      <div class="footer-links">
+        <a href="https://www.bitews.com/policy/terms-of-service" target="_blank">Terms &amp; Conditions</a>
+        <span>|</span>
+        <a href="https://www.bitews.com/policy/privacy-policy" target="_blank">Privacy Policy</a>
+        <span>|</span>
+        <a href="https://www.bitews.com/policy/cookie-policy" target="_blank">Cookie Policy</a>
+        <span>|</span>
+        <a href="https://www.bitews.com/policy/acceptable-use-policy" target="_blank">Acceptable Use Policy</a>
+        <span>|</span>
+        <a href="https://www.bitews.com/policy/rp" target="_blank">Refund Policy</a>
+        <span>|</span>
+        <a href="https://www.bitews.com/disclaimer" target="_blank">Disclaimer</a>
+      </div>
 
-// Tabs
-function openCity(evt, cityName) {
-  var i;
-  var x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  var activebtn = document.getElementsByClassName("testbtn");
-  for (i = 0; i < x.length; i++) {
-    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " w3-dark-grey";
-}
+      <p style="margin-top: 20px; font-size: 0.8rem; color: #64748b;">
+        &copy; Copyright 2026, Bitew Studio Lab (BSL) and logo. All rights reserved.<br>
+        Powered by <a href="https://www.bitews.com/home" target="_blank" style="color: #4ade80;">BSL</a>
+      </p> -->
+    </div>
+  </footer>
 
-var mybtn = document.getElementsByClassName("testbtn")[0];
-mybtn.click();
-
-// Accordions
-function myAccFunc(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// Slideshows
-var slideIndex = 1;
-
-function plusDivs(n) {
-  slideIndex = slideIndex + n;
-  showDivs(slideIndex);
-}
-
-function showDivs(n) {
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-
-showDivs(1);
-
-// Progress Bars
-function move() {
-  var elem = document.getElementById("myBar");   
-  var width = 5;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (width == 100) {
-      clearInterval(id);
-    } else {
-      width++; 
-      elem.style.width = width + '%'; 
-      elem.innerHTML = width * 1  + '%';
+  <!-- Interactive Scripts & Copy Protection -->
+  <script>
+    // Lightbox Functionality
+    function openLightbox(element, caption) {
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("modalImg");
+      var captionText = document.getElementById("imageCaption");
+      modal.style.display = "block";
+      modalImg.src = element.src;
+      captionText.innerHTML = caption || element.alt || "";
     }
-  }
-}
-</script>
 
+    function closeLightbox() {
+      document.getElementById("imageModal").style.display = "none";
+    }
 
-
-
- <!-- ይህ ከዚህ በታች የሚጀምረው ኮድ በጣም አስፈላጊ ኮድ ነው። የኪቦርድ ኪ ወይም ማውሳችንን በቀኝ ክሊክ ሲደረፍ ለሚከፈተው
-     እና የሚታዬውን ወይም ኮፒ ፔስት የሚደረገውን ኮድ ወይም ቴክስቱን ኮፒ እንዳይሆን መከላከያ ኮድ ነው። እቦዲውጋ ካለው ትንሽዬ ኮድን ጨምሮ -->
-
-     <script>
-
-
-      document.onkeydown = function(e){
-      
-          //console.log(e.keyCode); // u = 85, i = 73, j =74
-          if (e.ctrlkey && e.keyCode == 85){
-      
-              alert("Ctrl + u has been disabled");
-      
-              return false;
-          }
-      
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-      
-              alert("Ctrl + shift + I has been disabled");
-      
-              return false;
-          }
-      
-      
-          if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-      
-              alert("Ctrl + shift + J has been disabled");
-      
-            return false;
+    // Modal background click dismissal
+    window.onclick = function(event) {
+      var imgModal = document.getElementById("imageModal");
+      var aboutModal = document.getElementById("id01");
+      if (event.target === imgModal) {
+        imgModal.style.display = "none";
       }
-          if (e.keyCode == 123) { // F12 button
-      
-              alert("F12 has been disabled");
-      
-              return false;
-          }
-      
-      
+      if (event.target === aboutModal) {
+        aboutModal.style.display = "none";
       }
-      
-              
-</script>
-      
-<!-- ይህ ከዚህ በላይ ያለው ኮድ በጣም አስፈላጊ ኮድ ነው። የኪቦርድ ኪ ወይም ማውሳችንን በቀኝ ክሊክ ሲደረፍ ለሚከፈተው
-   እና የሚታዬውን ወይም ኮፒ ፔስት የሚደረገውን ኮድ ወይም ቴክስቱን ኮፒ እንዳይሆን መከላከያ ኮድ ነው። እቦዲውጋ ካለው ትንሽዬ ኮድን ጨምሮ -->
+    };
 
+    // Cut / Copy / Paste & Right-Click Context Menu Prevention
+    $(document).ready(function() {
+      $('body').on('cut copy paste', function(e) {
+        e.preventDefault();
+      });
+      $(document).on("contextmenu", function(e) {
+        return false;
+      });
+    });
+
+    // Keyboard Inspection Shortcuts Disabled (Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, F12)
+    document.onkeydown = function(e) {
+      if (e.ctrlKey && (e.keyCode === 85 || (e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)))) {
+        return false;
+      }
+      if (e.keyCode === 123) {
+        return false;
+      }
+    };
+  </script>
 </body>
 </html>
-
-
-
-
-
